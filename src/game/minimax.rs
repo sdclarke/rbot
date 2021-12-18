@@ -17,9 +17,9 @@ impl Minimax {
         self.side = side;
     }
 
-    pub fn get_best_move(&self, board: &Board) -> usize {
+    pub fn get_best_move(&self, board: &Board) -> Result<usize, &'static str> {
         let mut max = i32::MAX;
         let mut max_hole: usize = 0;
-        max_hole
+        return Ok(max_hole);
     }
 }

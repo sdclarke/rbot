@@ -20,13 +20,20 @@ pub fn new_board(holes: usize, seeds: u8) -> Board {
 
 impl Board {
     pub fn get_no_of_holes(&self) -> usize {
-        self.holes
+        return self.holes;
     }
 
     pub fn set_seeds(&mut self, side: Side, hole: usize, seeds: u8) {
         match side {
             South => self.state[(0, hole)] = seeds,
             North => self.state[(1, hole)] = seeds,
+        }
+    }
+
+    pub fn set_seeds_in_store(&mut self, side: Side, seeds: u8) {
+        match side {
+            South => self.state[(0, 0)] = seeds,
+            North => self.state[(1, 0)] = seeds,
         }
     }
 }
