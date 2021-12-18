@@ -10,7 +10,7 @@ pub struct Board {
 
 pub fn new_board(holes: usize, seeds: u8) -> Board {
     let mut b = Board {
-        holes: holes,
+        holes,
         state: Array2D::filled_with(seeds, 2, holes+1),
     };
     b.state[(0, 0)] = 0;
@@ -20,7 +20,7 @@ pub fn new_board(holes: usize, seeds: u8) -> Board {
 
 impl Board {
     pub fn get_no_of_holes(&self) -> usize {
-        return self.holes;
+        self.holes
     }
 
     pub fn set_seeds(&mut self, side: Side, hole: usize, seeds: u8) {

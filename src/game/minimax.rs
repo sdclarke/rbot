@@ -8,7 +8,7 @@ pub struct Minimax {
 
 pub fn new_minimax(side: Side) -> Minimax {
     Minimax {
-        side: side,
+        side,
     }
 }
 
@@ -20,6 +20,6 @@ impl Minimax {
     pub fn get_best_move(&self, board: &Board) -> Result<usize, &'static str> {
         let mut max = i32::MAX;
         let mut max_hole: usize = 0;
-        return Ok(max_hole);
+        Ok(max_hole)
     }
 }
