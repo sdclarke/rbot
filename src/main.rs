@@ -26,12 +26,11 @@ fn main() {
                 let south = game::protocol::interpret_start_message(&message).unwrap();
                 if south {
                     can_swap = false;
-                    send_message("MOVE MESSAGE HERE\n");
+                    send_message(&game::protocol::create_move_message(1));
                 } else {
                     side = side.opposite();
                     minimax.update_side(side);
                 }
-                eprintln!("{:?}", minimax);
             }
             game::protocol::MessageType::State => {
                 let move_turn = game::protocol::interpret_state_message(&message, &mut b).unwrap();

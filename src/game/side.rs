@@ -1,7 +1,6 @@
-use crate::game::side::Side::{South, North};
+use crate::game::side::Side::{North, South};
 
-#[derive(Debug)]
-#[derive(Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub enum Side {
     South,
     North,
@@ -12,6 +11,13 @@ impl Side {
         match self {
             South => North,
             North => South,
+        }
+    }
+
+    pub fn index(&self) -> usize {
+        match self {
+            South => 0,
+            North => 1,
         }
     }
 }
